@@ -6,7 +6,7 @@ guests <- 8
 chips_per <- 0.4
 
 #lab step #7: calculate the expected amount of leftover chips (include self)
-leftover <- chips - ((guests + 1) * 0.4)
+leftover <- chips - ((guests + 1) * chips_per)
 
 #lab step #8: ranktings for movies
 Self <- c(7, 6, 5, 1, 2, 3, 4)
@@ -25,6 +25,7 @@ rankings <- cbind(Self, Penny, Jenny, Lenny, Stewie)
 #lab step #11: inspect the structure of PennyIV, Penny, and rankings
 #PennyIV is numeric, Penny is a sequence of numeric, rankings is a matrix of numeric
 #.....
+#"Penny is a vector"
 str(PennyIV)
 str(Penny)
 str(rankings)
@@ -69,6 +70,7 @@ ranksDF[2, 2]
 #lab step #20: access everyone’s rankings for episodes IV – VI
 IVtoVI <- c(4, 5, 6)
 ranksDF[IVtoVI,]
+#ranksDF[4:6,]
 
 #lab step #21: access everyone’s rankings for episodes II, V, and VII
 II_V_VII <- c(2, 5, 7)
