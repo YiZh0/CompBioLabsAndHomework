@@ -106,3 +106,24 @@ legend("topright", c("Prey", "Predators"), pch = rep(16,2), col = c("green", "re
 myResults <- cbind(time, n, p)
 colnames(myResults) <- c("TimeStep", "PreyAbundance", "PredatorAbundance")
 write.csv(x = myResults, file = "PredPreyResults.csv", row.names = F)
+
+# OPTIONAL Part III. 
+initPreyVec <- seq(from = 10, to = 100, by = 10)
+liPV <- length(initPreyVec)
+results_sets <- array(rep(0, liPV*totalGenerations*3), dim=c(liPV, totalGenerations, 3))
+for (set_n in 1:liPV) {
+    
+    for (i in 2:totalGenerations) {
+        results_sets[set_n, ]
+        n[t] <- n[t-1] + (r * n[t-1]) - (a * n[t-1] * p[t-1])
+        if (n[t] < 0) {
+            n[t] <- 0
+        }
+    }
+    for (j in 2:totalGenerations) {
+        p[t] <- p[t-1] + (k * a * n[t-1] * p[t-1]) - (m * p[t-1])
+        if (p[t] < 0) {
+            p[t] <- 0
+        }
+    }
+}
