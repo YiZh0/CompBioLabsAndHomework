@@ -110,4 +110,4 @@ Scatter1 <- ggplot(hawksbillData, aes(x=CCLnt, y=Weight)) + geom_point() + geom_
 #Mean CCL for each turtle
 CCLmean <- summarise(group_by(hawksbillData, ID), MeanCCL = mean(CCLnt, na.rm=T))
 #histogram
-H1 <- ggplot(data=CCLmean, aes(MeanCCL)) + geom_histogram(bins = 20) + xlab("CCL (n-t, cm)") + ylab("frequency")
+H1 <- ggplot(data=CCLmean, aes(MeanCCL)) + geom_histogram(bins = 20) + xlab("CCL (n-t, cm)") + ylab("Frequency")
